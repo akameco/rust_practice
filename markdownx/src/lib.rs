@@ -1,3 +1,5 @@
+use wasm_bindgen::prelude::wasm_bindgen;
+
 #[derive(Clone, Debug, PartialEq)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub enum Token {
@@ -78,6 +80,11 @@ pub fn generator(ast: &[AstNode]) -> String {
         }
     }
     out
+}
+
+#[wasm_bindgen]
+pub fn markdownx(input: &str) -> String {
+    generator(&parse(&tokenizer(input)))
 }
 
 #[cfg(test)]

@@ -29,3 +29,10 @@
 ## 2. 構文解析 Parser
 
 ## 5. コード生成
+
+## WASM実装
+`wasm-pack` をインストールし、`wasm-pack build --target bunlder`を叩く。足りない要素が表示されたら、それを貼り付けて再実行。
+`target`に`.wasm`があるので完成
+webアプリにつなぎこむ。
+
+`vite-plugin-wasm` を利用すると`import`するだけで使えて便利
